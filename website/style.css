@@ -1,0 +1,97 @@
+@import url('https.//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+:root
+{
+    --font-style: 'Nunioto Sans', sans-serif;
+}
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+h2{
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+h3{
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html {
+    margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+    font-family:var(--font-style);
+    background: linear-gradient(rgb(0, 140, 255),rgb(0, 110, 138));
+}
+
+ul
+{
+
+    margin: 5%;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 25px 0;
+    padding-right: 30px;
+    border-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: 0.1px solid #008cff;
+    border: 0.1px solid #008cff;
+    background-color: #1900ff;
+    box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+li
+{
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+li:after
+{
+    display: block;
+}
+
+a
+{
+    box-shadow: inset 0 0 0 0 #252525;
+    color: #252525;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+a:hover
+{
+    box-shadow: inset 100px 0 0 0 #252525;
+    color: white;
+}
+#nav_menu
+{
+    float: inline-end;
+}
+
+a:link
+{
+    color: inherit;
+    text-decoration: inherit;
+}
+a:visited
+{
+    color: inherit;
+    text-decoration: inherit;
+}

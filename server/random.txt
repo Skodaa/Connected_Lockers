@@ -1,0 +1,29 @@
+while(true)
+	{
+		printf("Voulez vous reserver un casier ?(Y/N)");
+		scanf("%s" , reserv);
+		printf("Entrer numéro locker : (XX)");
+		scanf("%s", &id);
+		
+		char sending[4] = "Y,01";
+		
+
+		//Send some data
+		while(true){
+			if (send(socketClient , reserv , strlen(reserv) , 0) < 0)
+			{
+				puts("Send failed");
+				return true;
+			}
+		
+			//Receive a reply from the server
+			if( recv(socketClient , server_reply , 2000 , 0) < 0)
+			{
+				puts("recv failed");
+				break;
+			}
+		}
+		
+		puts("Server reply :");
+		puts(server_reply);
+	}
