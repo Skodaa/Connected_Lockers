@@ -1,56 +1,69 @@
 <?php
 
-    $title = "CYhub - Login";
+    $title = "CYhub - login"; 
+    $invalid = 3;
 
-    include("include/header.include.php"); 
+    include("include/header.include.php");
+
+    if($user_logged == False)
+    {
+        $aff = 0;
+    }
+    else
+    {
+        $aff = 1;
+    }
+
+    if(isset($id))
+    {
+        if(isset($password))
+        {
+            $invalid = verif_mdp($id,$password);
+            if($invalid == 1)
+            {
+                $aff = 1;
+                $_SESSION["logged"] = TRUE;
+                $_SESSION["id_user"] = $id;
+            }
+            else
+            {
+                $aff = 0;
+
+            }
+        }
+    }
 
 ?>
-        <main>
-            <h2> Formulaire création d'utilisateur : </h2>
-            <form action="connexion.php" method="get" id="connect" target="_blank">
-                <fieldset><legend><label>Inscriver vous :</legend></label>
-                <legend><label> No utilisateur : </label></legend>
-                    <input type="text" name="id" />
-                <legend><label> Nom  : </label></legend>
-                    <input type="text" name="nom" />
-                <legend><label> Prénom : </label></legend>
-                    <input type="text" name="prenom" />
-                <legend><label> Date de naissance : </label></legend>
-                    <input type="date" name="birthday" />
-                <legend><label> email : </label></legend>
-                    <input type="text" name="mail" />   
-                <legend><label> numéro de téléphone : </label></legend>
-                    <input type="text" name="phone" />       
-                <legend><label> êtes vous en situation de hadicap ? </label></legend>
-                    <label> oui </label>
-                    <input type="radio" name="handicap" value="true"/>
-                    <label> non </label>
-                    <input type="radio" name="handicap" value="false" checked="checked"/>
-                <legend><label> De quel département faite vous partit ? </label></legend>
-                    <label> Informatique </label>
-                    <input type="radio" name="dep" value="1001"/>
-                    <label> Mathématiques </label>
-                    <input type="radio" name="dep" value="1002"/>
-                    <label> Physique </label>
-                    <input type="radio" name="dep" value="1003"/>
-                    <label> CUPGE </label>
-                    <input type="radio" name="dep" value="1004"/>
-                <input type="submit" value="Créer" />
-                </fieldset>
-            </form>
+    <main>  
+        <?php
 
-            <?php
-
-            if($valid == 8)
+        if($aff == 0)
+        {
+            
+            echo "<div class=\"logs\"><div class=\"logs-contain\"><form class=\"form\" action=\"connexion.php\" method=\"post\" id=\"connect\">
+            <label> Connecter vous : </label>
+            <div class=\"field-container\">
+            <label> Id utilisateur : </label>
+                <input class=\"field\" type=\"text\" name =\"id\"/>
+            </div><div class=\"field-container\">
+            <label> Mot de passe : </label>
+                <input class=\"field\" type=\"password\" name=\"password\"/>";
+            if(($invalid == 0) and (isset($_POST['id'])))
             {
-                $result = add_uti($id,$nom,$prenom,$birthday,$mail,$phone,$handicap,$dep);
-                echo $result;
+                echo "<label class=\"erreur\"> Erreur de mot de passe ! </label>";
             }
-                
-
-            ?>
-        </main>
+            echo "</div>
+                <input type=\"submit\" value=\"connexion\"/>";
+            
+            echo "\t\n\n</form>";
+            echo "<a id=\"activado\" href=\"activation.php\"> Activer votre compte </a></div></div>";
+        }
+        else if($aff == 1)
+            echo " <div class=\"logs\"><div class=\"logs-contain\"><p class=\"field\"> Vous êtes maintenant connecté !</p><a class=\"retour\" href=\"index.php\"> Retour au menu </a></div></div>";
+        ?>
 
 <?php
-    include("include/footer.include.php");
+
+    include("include/footer.include.php")
+
 ?>

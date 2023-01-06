@@ -1,8 +1,7 @@
 
     <footer>
-			<p> Par VOLQUARDSEN.A, VAYSSE.M, pour plus d'information veuillez ne pas nous contacter. </p>	
-            <p> Pour nous contacter, ne le faite pas </p>
-            
+			<p> Par VAYSSE M. VOLQUARDSE A. ZHANG Q., pour plus d'informations veuillez ne pas nous contacter. </p>	
+            <a href="plan.php"> plan du site</p>
 	</footer>
     </body>
 </html>

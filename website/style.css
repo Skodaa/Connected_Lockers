@@ -7,6 +7,8 @@ h1 {
     font-size: 40px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
+    border: 0.1px solid #000000;
+
 }
 h2{
     text-align: center;
@@ -33,9 +35,31 @@ html {
 body {
     font-family:var(--font-style);
     background: linear-gradient(rgb(0, 140, 255),rgb(0, 110, 138));
+    min-height: auto;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
 }
 
-ul
+footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #252525;
+    color: white;
+    text-align: center;
+}
+
+.center
+{
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.tete
 {
 
     margin: 5%;
@@ -46,8 +70,6 @@ ul
     padding: 25px 0;
     padding-right: 30px;
     border-radius: 25px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
     border-right: 0.1px solid #008cff;
     border: 0.1px solid #008cff;
     background-color: #1900ff;
@@ -61,28 +83,25 @@ li
     font-size: 20px;
     cursor: pointer;
 }
-li:after
+nav
 {
-    display: block;
+    z-index: 1;
+    display:flex;
+    position:fixed;
+    top:0;
+    left:auto;
+    right:0;
+    
+}
+.logo
+{
+    position:fixed;
+    float:left;
 }
 
-a
-{
-    box-shadow: inset 0 0 0 0 #252525;
-    color: #252525;
-    margin: 0 -.25rem;
-    padding: 0 .25rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-}
-
-a:hover
-{
-    box-shadow: inset 100px 0 0 0 #252525;
-    color: white;
-}
 #nav_menu
 {
-    float: inline-end;
+    float: right;
 }
 
 a:link
@@ -94,4 +113,120 @@ a:visited
 {
     color: inherit;
     text-decoration: inherit;
+}
+
+#erreur
+{
+    color:red;
+}
+
+.menu
+{
+    
+    float: right;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+
+.logs {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    bottom: 0;
+    top:0;
+    right: 0;
+    
+}
+.logs-contain {
+        background: rgba(255, 255, 255, .05);
+        width: 475px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 45px 25px;
+        border-radius: 25px;
+        box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.2);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 70%;
+}
+    
+.field-container {
+        display: flex;
+        flex-direction: column;
+}
+
+        
+        label {
+            text-align: left;
+            font-size: 1.3rem;
+            opacity: .7;
+            padding: 10px 0px;
+        }
+        
+        .field {
+            margin-bottom: 25px;
+            height: 40px;
+            width: 100%;
+            color: rgba(255,255,255, .3);
+            background: rgba(0,0,0,0);
+            border-bottom: 2px solid rgba(255,255,255, .3);
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            transition: .5s ease-in-out;
+        }.field:focus {
+            color: rgba(255,255,255, 1);
+            border-bottom: 2px solid rgba(255,255,255, 1);
+        }
+        .field2 {
+            margin-bottom: 25px;
+            height: 40px;
+            width: 100%;
+            color: rgb(0, 0, 0);
+            background: rgba(0,0,0,0);
+            border-bottom: 2px solid rgba(0, 0, 0);
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: justify;
+            transition: .5s ease-in-out;
+        }.field2:focus {
+            color: rgb(0, 0, 0);
+            border-bottom: 2px solid rgb(0, 0, 0);
+        }
+    
+    input[type="submit"] {
+        background: rgba(255, 255, 255, .1);
+        padding: 15px;
+        margin: 20px 0px;
+        border-radius: 25px;
+        font-size: 1.3rem;
+        color: #fff;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    } input[type=submit]:hover {
+        background: rgba(255, 255, 255, .13);
+        box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.1);
+    }
+
+
+.connected
+{
+    font-size:20px;
+    text-align: center;
+    margin-top:25%;
+}
+.retour:hover{
+    padding:15px;
+    border-radius: 10px;
+    background-color: #252525;
+    color:azure;
 }
